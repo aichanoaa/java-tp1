@@ -1,7 +1,7 @@
-package project1.Partie1;
+package projet1.project1.Partie1;
 import java.util.Scanner;
 
-public class EX1 {
+public class ex1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Entrez un nombre : ");
