@@ -1,0 +1,56 @@
+public abstract class Abonnement {
+    private String nom;
+    private double prixBase;
+    private int nbProfils;
+
+    public Abonnement(String nom, double prixBase, int nbProfils) {
+        this.nom = nom;
+        this.prixBase = (prixBase > 0) ? prixBase : 50;
+        this.nbProfils = (nbProfils > 0) ? nbProfils : 1;
+    }
+
+    // Getters
+    public String getNom() {
+        return nom;
+    }
+
+    public double getPrixBase() {
+        return prixBase;
+    }
+
+    public int getNbProfils() {
+        return nbProfils;
+    }
+
+    // Setters
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrixBase(double prixBase) {
+        if (prixBase > 0) {
+            this.prixBase = prixBase;
+        }
+    }
+
+    public void setNbProfils(int nbProfils) {
+        if (nbProfils > 0) {
+            this.nbProfils = nbProfils;
+        }
+    }
+
+    public boolean estPartageFamilial() {
+        return nbProfils >= 3;
+    }
+
+    public void afficherInfos() {
+        System.out.println("Nom : " + nom);
+        System.out.println("Prix de base : " + prixBase + " DH");
+        System.out.println("Nombre de profils : " + nbProfils);
+        System.out.println("Partage familial : " + estPartageFamilial());
+    }
+
+    public abstract double calculerCoutMensuel();
+
+    public abstract int calculerScoreSatisfaction();
+}
